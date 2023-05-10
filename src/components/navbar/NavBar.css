@@ -1,7 +1,4 @@
-li {
-    list-style-type: none ;
-}
-
-ul {
-    float: left;
+nav {
+    display: flex;
+    justify-content: space-between;
 }

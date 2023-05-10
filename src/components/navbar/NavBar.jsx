@@ -1,5 +1,7 @@
 import CartWidget from "../CartWidget/CartWidget"
 import "./NavBar.css"
+import Brand from "../Brand/Brand.jsx"
+import {Link} from "react-router-dom"
 
 
 function NavBar () {
@@ -9,16 +11,17 @@ function NavBar () {
     return (
 <>
         <nav>
-            <li>
-                <ul><a href="*" >Inicio</a></ul>
-                <ul><a href="*" >Productos</a></ul>
-                <ul><a href="*" >Servicios</a></ul>
-                <ul><a href="*" >Contacto</a></ul>
-            </li>
+                <Link to="/" >Inicio</Link>
+                <Link to="/productos/semipermanente" >Esmaltado Semipermanente</Link>
+                <Link to="/productos/capping" >Capping</Link>
+                <Link to="/productos/esmaltadotradicional" >Esmaltado Tradicional</Link>
 
         </nav>
 
         <CartWidget/>
+
+        
+    <Brand titulo="JadeNails" />
 
 </>
     )

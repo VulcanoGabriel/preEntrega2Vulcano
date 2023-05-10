@@ -2,20 +2,32 @@ import { useState } from 'react'
 import NavBar from './components/navbar/NavBar.jsx'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
-import Brand from './components/Brand/Brand.jsx'
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
+  
 
 function App() {
 
   return (
 
-    <div>
-   
+    <BrowserRouter>
 
-    <Brand titulo="JadeNails" />
-    <NavBar/>
-    <ItemListContainer greeting="Bienvenido a nuestra tienda online"/>
+  <NavBar/>
 
-    </div>
+  {/* <ItemListContainer/> */}
+
+    <Routes>
+      
+      <Route path="/" element={<ItemListContainer greeting="Bienvenido a nuestra tienda online"/>} />
+      <Route path='productos/:categoriaId' element={<ItemListContainer/>} />
+      <Route path='/detalle/:itemId' element={<ItemDetailContainer/>} />
+
+    </Routes>
+
+
+
+    </BrowserRouter>
+
   )
 }
 
