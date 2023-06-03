@@ -1,7 +1,11 @@
 .divCart {
-    position: fixed;
-    margin-left: 50%;
-    color: blue;
     
-    
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
 }
+
+.divCartActive {
+    visibility: visible;
+}
+

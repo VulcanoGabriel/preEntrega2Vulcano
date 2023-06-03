@@ -1,13 +1,13 @@
+import "./itemCard.css" 
 import { Link } from "react-router-dom";
 
 const ItemCard = ({item}) => {
 
     return(
-        <div >
+        <div className="tarjetaListado" >
         <h3>{item.nombre}</h3>
         <p>{item.descripcion}</p>
         <Link to={`/detalle/${item.id}`}>Ver mas</Link>
-        
     </div>
 
 

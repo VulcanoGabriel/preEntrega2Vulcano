@@ -13,7 +13,7 @@ function NavBar () {
         <nav>
                 <Link to="/" >Inicio</Link>
                 <Link to="/productos/semipermanente" >Esmaltado Semipermanente</Link>
-                <Link to="/productos/capping" >Capping</Link>
+                <Link to="/productos/tratamiento" >Capping</Link>
                 <Link to="/productos/esmaltadotradicional" >Esmaltado Tradicional</Link>
 
         </nav>
