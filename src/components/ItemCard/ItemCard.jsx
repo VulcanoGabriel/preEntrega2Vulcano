@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 const ItemCard = ({item}) => {
 
     return(
-        <div className="tarjetaListado" >
-        <h3>{item.nombre}</h3>
-        <p>{item.descripcion}</p>
-        <Link to={`/detalle/${item.id}`}>Ver mas</Link>
+        <div className="tarjeta" >
+        <h3 className="tarjetaNombre">{item.nombre}</h3>
+        <p className="tarjetaDescripcion">{item.descripcion}</p>
+        <img src={item.foto} alt="Foto servicio" />
+        <Link className="tarjetaVer" to={`/detalle/${item.id}`}>Ver mas</Link>
     </div>
 
 

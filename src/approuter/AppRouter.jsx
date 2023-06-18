@@ -14,6 +14,7 @@ import RegisterScreen from '../components/RegristerScreen/RegisterScreen.jsx';
 import {AuthContext} from "../context/AuthContext"
 import { useContext } from 'react';
 import Checkout from '../components/Checkout/Checkout';
+import "../approuter/approuter.css"
 
 
 const AppRouter = () => {
@@ -29,10 +30,13 @@ return(
 
     { 
       user.logged
-      ?  <> 
-        <NavBar/>
-        <Buscador/>
+      ?  <div className='logueadoTodo'> 
+
+      <div className='navBarTodo'>  <NavBar />
+        {/* <Buscador/> */}
+        </div>
        {/* <ItemListContainer/> */}
+       <div className='contenidoTodo'>
           <Routes>
         <Route path="/" element={<ItemListContainer greeting="Bienvenido a nuestra tienda online"/>} />
         <Route path='productos/:categoriaId' element={<ItemListContainer/>} />
@@ -40,9 +44,9 @@ return(
         <Route path='*' element={<Nf404/>}/>
         <Route path='/cart' element={ <Cart/>} />
         <Route path='/checkout' element={<Checkout/>}/>
-  
       </Routes>
-  </>
+      </div>
+  </div>
       :
       <Routes>
         <Route path='*' element={<LoginScreen/>}/>

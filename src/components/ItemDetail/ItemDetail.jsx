@@ -31,8 +31,9 @@ const ItemDetail = ({item}) => {
         <div>
 
             <h3>{item.nombre}</h3>
-            <h3>{item.precio}</h3>
-            <h3>{item.stock}</h3>
+            <img src={item.foto} alt="Foto servicio" />
+            <h3>Precio: {item.precio}</h3>
+            <h3>Stock: {item.stock}</h3>
 
             <p>Subtotal: {item.precio * cantidad }</p>
 

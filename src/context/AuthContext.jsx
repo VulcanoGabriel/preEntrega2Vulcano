@@ -1,11 +1,8 @@
-import {createContext, useState} from "react"
+import {createContext, useEffect, useState} from "react"
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth"
+import { auth } from "../firebase/firebase"
 
 export const AuthContext = createContext()
-
-const mock = {
-    email: "asd@asd.com",
-    password: "123"
-}
 
 export const AuthProvider = ({children}) => {
     const [user, setUser]= useState({
@@ -14,19 +11,45 @@ export const AuthProvider = ({children}) => {
     })
 
     const login = (values) => {
-        if(values.email ===mock.email && values.password === mock.password){
-            setUser({
-                email:values.email,
-                logged: true
-            })
-        }
+        signInWithEmailAndPassword(auth, values.email, values.password)
+        .catch(e => console.log(e))
     }
 
+    const register = (values) => {
+        createUserWithEmailAndPassword(auth, values.email, values.password)
+        .catch(e => console.log(e))
+    }
+
+    const logOut = () => {
+        signOut (auth)
+    }
+
+
+    useEffect (() => {
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser({
+                    email: user.email,
+                    logged: true
+                })
+            } else {
+                setUser({
+                    email: null,
+                    logged: false
+                })
+            }
+
+        })
+
+    }, [])
 
     return(
         <AuthContext.Provider value={{
             user,
-            login
+            login,
+            register,
+            logOut
             }}>
             {children}
         </AuthContext.Provider>

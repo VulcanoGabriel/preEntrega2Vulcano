@@ -2,8 +2,9 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 
-const RegisterScreen = () => {
-    const {register} = useContext(AuthContext)
+const LoginScreen = () => {
+
+    const {login} = useContext(AuthContext)
 
     const[values, setValues] = useState({
         email:"",
@@ -19,27 +20,21 @@ const RegisterScreen = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        register(values)
+        login(values)
 
     }
-
-
-
-
-
-
     return(
-        
+
         <div>
             <div>
-                <h2>Registrar usuario</h2>
+                <h2>Login</h2>
                 <hr/>
 
                 <form onSubmit={handleSubmit}>
 
                         <input type="email" 
-                                placeholder="email"
                                 value={values.email}
+                                placeholder="email"
                                 name="email"
                                 onChange={handleInput}
                                 />
@@ -53,10 +48,8 @@ const RegisterScreen = () => {
                          onChange={handleInput}
                          />
 
-                         <button type="submit">Registrarme</button>
-
-                         <Link to="/Login">Ya estoy registrado</Link>
-                         
+                         <button type="submit">login</button>
+                         <Link to="/registerScreen">Registrarme</Link>
                 </form>
                 
 
@@ -65,14 +58,7 @@ const RegisterScreen = () => {
 
             </div>
         </div>
-
-
-
     )
-
-
-
-
 }
 
-export default RegisterScreen
+export default LoginScreen

@@ -1,10 +1,11 @@
 import { useEffect } from "react"
 import { useState } from "react"
-
+import "../ItemListContainer/itemListContainer.css"
 import ItemList from "../ItemList/ItemList"
 import { useParams} from "react-router-dom"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import {db} from "../../firebase/firebase"
+// import "../../index.css"
 // import { useProductos } from "../hooks/useProfuctos"
 // import {useProductos} from "../hooks/useProfuctos"
 
@@ -27,7 +28,6 @@ function ItemListContainer({greeting}) {
     //Filtra por categoria los productos valor referencia desde el app.jsx
     const {categoriaId} = useParams()
 
-    console.log(categoriaId)
 
     useEffect(() => {
 
@@ -64,14 +64,14 @@ function ItemListContainer({greeting}) {
 //                         ? productos.filter((el) => el.nombre.toLowerCase().includes(search,toLowerCase()))
 //                         :productos
     return (
-<div>
+<div className="itemListContainer" >
         <h2>{greeting}</h2>
         {
-            // carga
-            // ? <h2>Cargando</h2>
-            // :
+            carga
+            ?  <ItemList items={productos}/>
+            :
                 //se lleva los productos cargados en el useState productos a itemlist bajo el nombre de items
-                    <ItemList items={productos}/>
+                <h2>Cargando</h2>
         }
         </div>
     )
