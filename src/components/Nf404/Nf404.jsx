@@ -1,35 +1,28 @@
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
+import "../Nf404/nf404.css"
 
-function Nf404  () {
+function Nf404() {
 
-    const [tiempo, setTiempo] = useState(3) 
+    const [tiempo, setTiempo] = useState(3)
 
     const navigate = useNavigate()
 
-    if (tiempo <= 0) navigate (-1) || navigate("/")
+    if (tiempo <= 0) navigate(-1) || navigate("/")
 
-    useEffect (() => {
-
+    useEffect(() => {
         setInterval(() => {
             setTiempo((state) => state - 1)
-
         }, 3000);
+    }, [])
 
 
-
-    },[])
-
-
-    return (
-
+    return (        
         <div>
-            <h2>Tiempo de espera {tiempo}</h2>
-        </div>
-
+            <h2>Pagina no encontrada redireccionando</h2>
+            <div className="spinner"></div>
+         </div>
     )
-
-
 }
 
 export default Nf404

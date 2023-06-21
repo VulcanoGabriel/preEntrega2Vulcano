@@ -1,5 +1,4 @@
 .divCart {
-    
     color: white;
     cursor: pointer;
     visibility: hidden;
@@ -8,4 +7,3 @@
 .divCartActive {
     visibility: visible;
 }
-

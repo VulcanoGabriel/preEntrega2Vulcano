@@ -1,10 +1,6 @@
-
-function Brand ({titulo}) {
-
-
+function Brand({ titulo }) {
 
     return (
-
 
         <h1>{titulo}</h1>
     )

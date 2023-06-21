@@ -1,16 +1,12 @@
-import { useState } from "react";
-
-const ItemCount = ({stock, agregarFn, setCantidad, cantidad}) => {
-
+const ItemCount = ({ stock, agregarFn, setCantidad, cantidad }) => {
 
     const handleRestar = () => {
         cantidad > 1 && setCantidad(cantidad - 1)
     }
 
     const handleSumar = () => {
-      cantidad < stock &&  setCantidad(cantidad + 1)
+        cantidad < stock && setCantidad(cantidad + 1)
     }
-
 
     return (
         <div>
@@ -20,8 +16,6 @@ const ItemCount = ({stock, agregarFn, setCantidad, cantidad}) => {
             <button onClick={agregarFn} >Agregar al carrito </button>
         </div>
     )
-
-
 }
 
 export default ItemCount

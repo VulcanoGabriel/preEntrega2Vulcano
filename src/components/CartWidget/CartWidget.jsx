@@ -1,23 +1,20 @@
-import {RiShoppingCartFill} from "react-icons/ri"
+import { RiShoppingCartFill } from "react-icons/ri"
 import "./CartWidget.css"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 
-function CartWidget () {
+function CartWidget() {
 
-    const {totalCantidad, cart} = useContext(CartContext)
+    const { totalCantidad, cart } = useContext(CartContext)
 
-
-    return(
+    return (
         <>
-        <Link to="/cart" className={`divCart ${cart.length > 0 ? "divCartActive" : ""}`}>
-            <RiShoppingCartFill/>
-        <p>{totalCantidad()}</p>
-        </Link>
+            <Link to="/cart" className={`divCart ${cart.length > 0 ? "divCartActive" : ""}`}>
+                <RiShoppingCartFill />
+                <p>{totalCantidad()}</p>
+            </Link>
         </>
-
-
     )
 }
 

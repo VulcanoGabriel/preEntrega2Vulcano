@@ -4,8 +4,8 @@
     height: 36px;
     border-radius: 50%;
     border-left-color: #09f;
-   margin-left: auto;
-   margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     animation: spin 1s ease infinite;
   }
   
@@ -17,8 +17,4 @@
     100% {
       transform: rotate(360deg);
     }
-  }
-
-  .spinnerHidden{
-    visibility: hidden;
   }

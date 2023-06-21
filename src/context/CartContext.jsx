@@ -6,7 +6,7 @@ export const CartContext = createContext()
 
 //provedor de contexto para el app.jsx
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
@@ -26,11 +26,11 @@ export const CartProvider = ({children}) => {
     }
 
     const totalCantidad = () => {
-        return cart.reduce((acc, item) => acc + item.cantidad, 0 )
+        return cart.reduce((acc, item) => acc + item.cantidad, 0)
     }
 
     const totalCompra = () => {
-        return cart.reduce((acc, item)=> acc + item.cantidad * item.precio, 0 )
+        return cart.reduce((acc, item) => acc + item.cantidad * item.precio, 0)
     }
 
     const removeItem = (id) => {
