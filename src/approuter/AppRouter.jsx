@@ -11,7 +11,6 @@ import { useContext } from 'react';
 import Checkout from '../components/Checkout/Checkout';
 import "../approuter/approuter.css"
 
-
 const AppRouter = () => {
 
   const { user } = useContext(AuthContext)
@@ -22,8 +21,10 @@ const AppRouter = () => {
 
       {
         user.logged
-          ? <div className='logueadoTodo'>
-
+          ?
+         
+           
+          <div className='logueadoTodo'>
             <div className='navBarTodo'>  <NavBar />
             </div>
             <div className='contenidoTodo'>

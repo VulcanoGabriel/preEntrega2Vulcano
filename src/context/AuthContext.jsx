@@ -33,6 +33,7 @@ export const AuthProvider = ({children}) => {
                     email: user.email,
                     logged: true
                 })
+              
             } else {
                 setUser({
                     email: null,
