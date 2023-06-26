@@ -13,11 +13,11 @@ function Nf404() {
     }, [])
 
 
-    return (        
+    return (
         <div>
-            <h2>redireccionando</h2>
+            <h2>Redireccionando</h2>
             <div className="spinner"></div>
-         </div>
+        </div>
     )
 }
 

@@ -35,7 +35,7 @@ function ItemDetailContainer() {
         <div>
             {
                 carga
-                    ? <h2>cargando</h2>
+                    ? <h2>Cargando</h2>
                     : <ItemDetail item={item} />
             }
         </div>

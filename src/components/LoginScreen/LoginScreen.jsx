@@ -2,8 +2,9 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 
-const LoginScreen = () => {
 
+const LoginScreen = () => {
+    import("../LoginScreen/loginscreen.css")
     const { login } = useContext(AuthContext)
 
     const [values, setValues] = useState({
@@ -25,8 +26,8 @@ const LoginScreen = () => {
     }
     return (
 
-        <div>
-            <div>
+        <div className="boxCenter">
+            <div className="box1">
                 <h2>Login</h2>
                 <hr />
                 <form onSubmit={handleSubmit}>
@@ -44,7 +45,9 @@ const LoginScreen = () => {
                         onChange={handleInput}
                     />
                     <button type="submit">login</button>
-                    <Link to="/registerScreen">Registrarme</Link>
+                    <div className="link" >
+                        <Link to="/registerScreen">Registrarme</Link>
+                    </div>
                 </form>
             </div>
         </div>

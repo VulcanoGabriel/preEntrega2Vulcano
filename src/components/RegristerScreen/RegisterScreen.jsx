@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
+import("../RegristerScreen/registerScreen.css")
 
 const RegisterScreen = () => {
     const { register } = useContext(AuthContext)
@@ -25,8 +26,8 @@ const RegisterScreen = () => {
 
     return (
 
-        <div>
-            <div>
+        <div className="boxCenter">
+            <div className="box1">
                 <h2>Registrar usuario</h2>
                 <hr />
                 <form onSubmit={handleSubmit}>
@@ -44,7 +45,7 @@ const RegisterScreen = () => {
                         onChange={handleInput}
                     />
                     <button type="submit">Registrarme</button>
-                    <Link to="/Login">Ya estoy registrado</Link>
+                    <Link className="link" to="/Login">Ya estoy registrado</Link>
                 </form>
             </div>
         </div>

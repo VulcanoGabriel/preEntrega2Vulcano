@@ -1,3 +1,5 @@
+import("../ItemCount/ItemCount.css")
+
 const ItemCount = ({ stock, agregarFn, setCantidad, cantidad }) => {
 
     const handleRestar = () => {
@@ -8,13 +10,17 @@ const ItemCount = ({ stock, agregarFn, setCantidad, cantidad }) => {
         cantidad < stock && setCantidad(cantidad + 1)
     }
 
+
+
     return (
-        <div>
+        <div className={`activo ${stock === 0 ? "divInactivo" : ""}`}>
             <button onClick={handleRestar}>-</button>
             <span>{cantidad}</span>
             <button onClick={handleSumar}>+</button>
             <button onClick={agregarFn} >Agregar al carrito </button>
         </div>
+
+
     )
 }
 

@@ -26,7 +26,7 @@ function NavBar() {
                 <p>Bienvenido {user.email}</p>
                 <button onClick={logOut}>Desloguear</button>
             </div>
-            <div className="brand"><Brand titulo="JadeNails" /></div>
+            <div className="brand"><Brand titulo="JADENAILS" /></div>
         </div>
     )
 }

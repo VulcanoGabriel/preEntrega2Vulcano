@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export const CartContext = createContext()
 
-
 //provedor de contexto para el app.jsx
 
 export const CartProvider = ({ children }) => {

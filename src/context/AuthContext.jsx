@@ -1,31 +1,30 @@
-import {createContext, useEffect, useState} from "react"
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth"
+import { createContext, useEffect, useState } from "react"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth"
 import { auth } from "../firebase/firebase"
 
 export const AuthContext = createContext()
 
-export const AuthProvider = ({children}) => {
-    const [user, setUser]= useState({
+export const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState({
         email: null,
-        logged:false
+        logged: false
     })
 
     const login = (values) => {
         signInWithEmailAndPassword(auth, values.email, values.password)
-        .catch(e => console.log(e))
+            .catch(e => console.log(e))
     }
 
     const register = (values) => {
         createUserWithEmailAndPassword(auth, values.email, values.password)
-        .catch(e => console.log(e))
+            .catch(e => console.log(e))
     }
 
     const logOut = () => {
-        signOut (auth)
+        signOut(auth)
     }
 
-
-    useEffect (() => {
+    useEffect(() => {
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -33,7 +32,7 @@ export const AuthProvider = ({children}) => {
                     email: user.email,
                     logged: true
                 })
-              
+
             } else {
                 setUser({
                     email: null,
@@ -45,13 +44,13 @@ export const AuthProvider = ({children}) => {
 
     }, [])
 
-    return(
+    return (
         <AuthContext.Provider value={{
             user,
             login,
             register,
             logOut
-            }}>
+        }}>
             {children}
         </AuthContext.Provider>
     )

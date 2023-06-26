@@ -1,24 +1,25 @@
 .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: #09f;
-   margin-left: auto;
-   margin-right: auto;
-    animation: spin 1s ease infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url("../../../public/img/logojadenails.jpg");
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .spinnerHidden{
-    visibility: hidden;
+  100% {
+    transform: rotate(360deg);
   }
+}
+
+.spinnerHidden {
+  visibility: hidden;
+}

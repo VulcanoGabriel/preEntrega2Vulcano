@@ -5,6 +5,7 @@ import { AuthContext } from "../../context/AuthContext"
 import { collection, addDoc, doc, updateDoc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase/firebase"
 import { Link } from "react-router-dom"
+import("../Checkout/checkout.css")
 
 
 const Checkout = () => {
@@ -27,18 +28,21 @@ const Checkout = () => {
 
         const { nombre, direccion, email, telefono } = values
 
-        if (nombre.length < 3 ) {
+        if (nombre.length < 2) {
             alert("nombre demaciado corto")
             return
         }
+
+
         if (direccion.length < 3) {
             alert("direccion invalida")
             return
         }
-        if (email.length < 3 ) {
+        if (email.length < 3) {
             alert("email incorrecto")
             return
         }
+
         if (telefono.length < 3) {
             alert("telefono incorrecto")
             return
@@ -58,7 +62,7 @@ const Checkout = () => {
                 .then((doc) => {
                     if (doc.data().stock >= item.cantidad) {
                         updateDoc(itemRef, {
-                            stock: doc.data().stock - item.cantidad
+                            Stock: doc.data().stock - item.cantidad
                         })
                     } else {
                         alert("no hay stock de " + item.nombre)
@@ -83,10 +87,12 @@ const Checkout = () => {
 
     if (orderId) {
         return (
-            <div>
-                <h3>compra con exito</h3>
-                <h4>Tu numero de orden es {orderId}</h4>
-                <Link to="/">Volver a inicio</Link>
+            <div className="boxCenter">
+                <div className="box1">
+                    <h3>Compra con exito</h3>
+                    <h4>Tu numero de orden es {orderId}</h4>
+                    <Link className="link" to="/">Volver a inicio</Link>
+                </div>
             </div>
 
         )
@@ -102,16 +108,15 @@ const Checkout = () => {
         })
     }
 
-
     if (cart.length === 0) {
         return <Navigate to="/" />
     }
 
     return (
-        <div>
-            <h2>checkout</h2>
+        <div className="boxCenter">
+            <h2>Checkout</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form className="box1" onSubmit={handleSubmit}>
                 <input
                     //valor para el useState para guardar los datos
                     value={values.nombre}
@@ -122,6 +127,7 @@ const Checkout = () => {
                     //
                     name="nombre"
                     onChange={handleInput}
+
                 />
 
                 <input
@@ -136,7 +142,7 @@ const Checkout = () => {
                     value={values.telefono}
                     type="text"
                     pattern="[0-9]+"
-                    placeholder="telefono"
+                    placeholder="codigo de area + telefono"
                     name="telefono"
                     onChange={handleInput}
                 />
@@ -148,7 +154,7 @@ const Checkout = () => {
                     name="email"
                     onChange={handleInput}
                 />
-                <button type="submit">enviar</button>
+                <button type="submit">Enviar</button>
             </form>
 
         </div>
