@@ -14,7 +14,8 @@ const Cart = () => {
     }
 
     return (
-        <div>
+        <div className="gridCart">
+            <div className="cart">
             <h2>Tu compra</h2>
             <hr />
             {
@@ -33,6 +34,7 @@ const Cart = () => {
             }
             <div><p>Total: $ {totalCompra()}</p></div>
             <Link to="/checkout">Ir al Checkout</Link>
+            </div>
         </div>
     )
 }

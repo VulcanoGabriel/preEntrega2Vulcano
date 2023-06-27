@@ -1,4 +1,14 @@
-.divBorrado {
+ .divBorrado {
     display: flex;
     justify-content: center;
+} 
+
+
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
 }

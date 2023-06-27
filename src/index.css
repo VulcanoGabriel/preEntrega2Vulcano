@@ -8,26 +8,31 @@
   text-align: center;
 }
 
-html {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: grid;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* height: fit-content; */
-  /* height: 10vh; */
   background-size: contain;
   background: url(/img/fondowrap.jpg);
   backdrop-filter: blur(200px);
   min-height: 100vh;
+  grid-column: 1/5;
 }
+
+html {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
 
 button {
   border-radius: 8px;
@@ -169,12 +174,21 @@ button:hover {
 }
 
 .bg_animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
   width: 100%;
   background: linear-gradient(to right, #ffffff, #ffffff);
   position: relative;
   overflow: hidden;
-  left: auto;
-  right: auto;
-  padding-left: 10vh;
-  padding-right: 10vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  margin: 10vh;
+}
+
+.pix{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
 }
