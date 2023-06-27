@@ -15,6 +15,7 @@ const Checkout = () => {
     //Estado para conectar los valores del formulario para que se guarden
     const [values, setValues] = useState({
         nombre: "",
+        emailc: "",
         email: user.email,
         direccion: "",
         telefono: ""
@@ -26,7 +27,13 @@ const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const { nombre, direccion, email, telefono } = values
+        const { nombre, direccion, email, telefono,emailc } = values
+
+        if (email !==  emailc) {
+            alert("Direccion de email incorrecta")
+            return
+        }
+
 
         if (nombre.length < 2) {
             alert("nombre demaciado corto")
@@ -152,6 +159,13 @@ const Checkout = () => {
                     type="text"
                     placeholder="email"
                     name="email"
+                    onChange={handleInput}
+                />
+                <input
+                    value={values.emailc}
+                    type="text"
+                    placeholder="Reingresar email"
+                    name="emailc"
                     onChange={handleInput}
                 />
                 <button type="submit">Enviar</button>
