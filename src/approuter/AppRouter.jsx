@@ -9,6 +9,7 @@ import RegisterScreen from '../components/RegristerScreen/RegisterScreen.jsx';
 import { AuthContext } from "../context/AuthContext"
 import { useContext } from 'react';
 import Checkout from '../components/Checkout/Checkout';
+import Footer from "../components/Footer/Footer"
 import "../approuter/approuter.css"
 
 const AppRouter = () => {
@@ -22,8 +23,8 @@ const AppRouter = () => {
       {
         user.logged
           ?
-         
-           
+
+
           <div className='logueadoTodo'>
             <div className='navBarTodo'>  <NavBar />
             </div>
@@ -38,7 +39,9 @@ const AppRouter = () => {
                 <Route path='/checkout' element={<Checkout />} />
               </Routes>
             </div>
+            <div className='footer'> <Footer /></div>
           </div>
+
           :
           <Routes>
             <Route path='*' element={<LoginScreen />} />

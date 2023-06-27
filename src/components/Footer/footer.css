@@ -1,0 +1,29 @@
+.footer {
+    margin-top: 60px;
+    height: 33vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: rgb(0, 0, 0);
+}
+
+.redesFooter {
+    display: flex;
+    justify-content: center;
+}
+
+.footerImg {
+    margin-top: 100px;
+    height: 40px;
+    width: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.redesFooter img:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3)
+}

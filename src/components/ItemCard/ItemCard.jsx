@@ -7,7 +7,7 @@ const ItemCard = ({ item }) => {
         <div className="tarjeta" >
             <h3 className="tarjetaNombre">{item.nombre}</h3>
             <p className="tarjetaDescripcion">{item.descripcion}</p>
-            <img src={item.foto} alt="Foto servicio" />
+            <img className="cardImg" src={item.foto} alt="Foto servicio" />
             <Link className="tarjetaVer" to={`/detalle/${item.id}`}>Ver mas</Link>
         </div>
     )
