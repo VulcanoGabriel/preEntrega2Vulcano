@@ -36,3 +36,7 @@ button:hover {
   border-color: #ffffff;
 }
 
+.boxCenter{
+  display: flex;
+  flex-direction: column;
+}

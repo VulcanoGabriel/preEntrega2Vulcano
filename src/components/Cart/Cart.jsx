@@ -29,9 +29,11 @@ const Cart = () => {
                         <button onClick={() => removeItem(item.id)}>X</button>
                         </div>
                         <button onClick={emptyCart}>Vaciar carrito</button>
+                        <hr />
                     </div>
                 )
             }
+          
             <div><p>Total: $ {totalCompra()}</p></div>
             <Link to="/checkout">Ir al Checkout</Link>
             </div>

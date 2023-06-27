@@ -121,6 +121,24 @@ const Checkout = () => {
 
     return (
         <div className="boxCenter">
+
+<div className="compraCheck">
+<h2>Tu compra</h2>
+            <hr />
+            {
+                cart.map((item) =>
+                    <div key={item.id}>
+                        <p>{item.nombre}</p>
+                        <p>Cantidad: {item.cantidad}</p>
+                        <p>Subtotal: {item.cantidad * item.precio}</p>
+                        <hr />
+                    </div>
+                    
+                )
+            }
+            <div><p>Total: $ {totalCompra()}</p></div>
+</div>
+
             <h2>Checkout</h2>
 
             <form className="box1" onSubmit={handleSubmit}>

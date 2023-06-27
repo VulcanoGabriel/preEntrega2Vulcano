@@ -25,6 +25,7 @@ const ItemDetail = ({ item }) => {
         <div>
             <h3>{item.nombre}</h3>
             <img src={item.foto} alt="Foto servicio" />
+            <h3>{item.descripcion}</h3>
             <h3>Precio: {item.precio}</h3>
             <h3 className={`Stock ${item.stock < 1 ? "noStock" : ""}`} >Stock: {item.stock}</h3>
             <p className={`activo ${item.stock === 0 ? "pInactivo" : ""}`}>Subtotal: {item.precio * cantidad}</p>
